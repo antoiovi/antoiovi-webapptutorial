@@ -15,8 +15,12 @@ Progetto base creato con il comando
 
 # 02-jsf
 
-## a1jsf 
+## a1jsf
 
 	Progetto minimale con utilizzo di un ManagedBean e din due semplici pagine xhtml
+
+## b1botstr
+
+  Progetto minimale con configurazione per JSF e BootsFaces
 
 # 03 CDI
