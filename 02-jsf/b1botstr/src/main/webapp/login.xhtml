@@ -18,7 +18,7 @@
           <h:outputText value="Username:" for="username" />
         </b:column>
         <b:column medium-screen="4">
-          <b:inputText placeholder="Username" id="username" value=""
+          <b:inputText placeholder="Username" id="username" value="#{loginBean.username}"
                        ajax="true" autocomplete="false" update="@(.message)">
             <f:facet name="prepend">
               <b:icon name="user" />
@@ -34,7 +34,7 @@
           <h:outputText value="Password:" />
         </b:column>
         <b:column medium-screen="4">
-          <b:inputSecret placeholder="Password" id="password" value=""
+          <b:inputSecret placeholder="Password" id="password" value="#{loginBean.password}"
                          ajax="true" autocomplete="false" update="@(.message)">
             <f:facet name="prepend">
               <b:iconAwesome name="key" />
