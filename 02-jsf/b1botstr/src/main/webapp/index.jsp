@@ -7,5 +7,12 @@
   <p>Messaggio di saluto:
 n style="color: #007700"><jsp:getProperty name = "msgbean" property = "message"/>
    </p>
+<ul>
+      <li><a href="pagina1.xhtml">pagina 1</a></li>
+      <li><a href="pagina2.xhtml">pagina 2</a></li>
+      <li><a href="helloboot.xhtml">helloboot.xhtml</a></li>
+      <li><a href="login.xhtml">login.xhtml</a></li>
+</ul>
+
 </body>
 </html>
