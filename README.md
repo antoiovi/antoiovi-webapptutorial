@@ -17,10 +17,13 @@ Progetto base creato con il comando
 
 ## a1jsf
 
-	Progetto minimale con utilizzo di un ManagedBean e din due semplici pagine xhtml
+	Progetto minimale con utilizzo di un ManagedBean e di due semplici pagine xhtml
 
 ## b1botstr
 
-  Progetto minimale con configurazione per JSF e BootsFaces
+  Progetto minimale con configurazione per JSF e BootsFaces.
+   Nel file web.xml sono sotto commento le dependency per application server, e
+   sono attive le dependency per semplici servlet container.
+  
 
 # 03 CDI
