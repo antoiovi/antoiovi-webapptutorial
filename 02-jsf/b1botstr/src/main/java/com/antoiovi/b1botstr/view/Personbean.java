@@ -1,30 +1,32 @@
 package com.antoiovi.b1botstr.view;
 
-import javax.inject.Named;
+import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ManagedBean;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import javax.validation.constraints.Email;
 
-@Named
+@RequestScoped
+@ManagedBean(name = mbean)
 public class Personbean {
 
 	@NotEmpty
-	@Size
+	@Size(min = 4, max = 10)
 	private String username;
 
 	@NotEmpty
-	@Size
+	@Size(min = 2, max = 25)
 	private String nome;
 
 	@NotEmpty
-	@Size
+	@Size(min = 2, max = 25)
 	private String cognome;
 
 	@Email
 	private String email;
 
 	@NotEmpty
-	@Size
+	@Size(min = 4, max = 10)
 	private String password;
 
 	public String getUsername() {

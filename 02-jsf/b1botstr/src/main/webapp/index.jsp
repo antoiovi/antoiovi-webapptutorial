@@ -12,6 +12,7 @@ n style="color: #007700"><jsp:getProperty name = "msgbean" property = "message"/
       <li><a href="pagina2.xhtml">pagina 2</a></li>
       <li><a href="helloboot.xhtml">helloboot.xhtml</a></li>
       <li><a href="login.xhtml">login.xhtml</a></li>
+      <li><a href="bforms.xhtml">bforms.xhtml</a></li>
 </ul>
 
 </body>
