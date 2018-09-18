@@ -4,7 +4,7 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  <servlet>
+ 
 
     <!-- The BootsFaces_THEME context-param controls the loading of the Themes -->
     <!-- The default is Bootstrap, the valid values are a Bootswach Theme name (lowercase) or "custom".
@@ -20,6 +20,7 @@
     <param-value>true</param-value>
     </context-param>
 
+ <servlet>
      <servlet-name>Faces Servlet</servlet-name>
      <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
      <load-on-startup>1</load-on-startup>
