@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+        <h:head>
+            <title>Programma base JSF 2.0</title>
+        </h:head>
+        <h:body>
+        	<h2>Programma base JSF 2.0 collegamento a database  - persone.xhtml</h2>
+          <h:dataTable value="#{personbean.allPersons}" var="o"
+    			    		>
+
+    			<h:column>
+    				<!-- column header -->
+    				<f:facet name="header">ID</f:facet>
+    				<!-- row record -->
+    				#{o.id}
+    			</h:column>
+
+    			<h:column>
+    				<f:facet name="header">Nome</f:facet>
+    				#{o.nome}
+    			</h:column>
+
+    			<h:column>
+    				<f:facet name="header">cognome</f:facet>
+    				#{o.cognome}
+    			</h:column>
+
+    			<h:column>
+    				<f:facet name="header">Email</f:facet>
+    				#{o.email}
+    			</h:column>
+
+    		</h:dataTable>
+
+        </h:body>
+
+</html>

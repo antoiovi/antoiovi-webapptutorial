@@ -1,0 +1,11 @@
+java-new-class --named PersonDao --target-package com.antoiovi.a1jdbcbase
+java-add-annotation --annotation javax.faces.bean.SessionScoped --target-class com.antoiovi.a1jdbcbase.PersonDao
+java-add-annotation --annotation javax.faces.bean.ManagedBean(name=persondao) --target-class com.antoiovi.a1jdbcbase.PersonDao
+
+java-new-method --named findAllPerson --access-type public --return-type java.sql.ResultSet --target-class com.antoiovi.a1jdbcbase.PersonDao
+java-new-method --named findByUsername --access-type public  --parameters(String username) --return-type java.sql.ResultSet    --target-class com.antoiovi.a1jdbcbase.PersonDao
+
+
+java-new-method --named saveNewPerson --access-type public --return-type void --parameters(com.antoiovi.a1jdbcbase.model.Person person) --target-class com.antoiovi.a1jdbcbase.PersonDao
+java-new-method --named updatePerson --access-type public --return-type void --parameters(com.antoiovi.a1jdbcbase.model.Person person) --target-class com.antoiovi.a1jdbcbase.PersonDao
+java-new-method --named deletePerson --access-type public --return-type void --parameters(int id)  --target-class com.antoiovi.a1jdbcbase.PersonDao

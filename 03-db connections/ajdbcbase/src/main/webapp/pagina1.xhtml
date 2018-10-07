@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+        <h:head>
+            <title>Programma base JSF 2.0</title>
+        </h:head>
+        <h:body>
+        	<h2>Programma base JSF 2.0 - pagina1.xhtml</h2>
+          <p><h:outputText value="${mbean.message}" /> </p>
+          <h:form><br/>
+          <h:commandLink action="/pagina2.xhtml">
+            <h:outputText value="vai a /pagina2.xhtml"/>
+          </h:commandLink><br/><br/>
+          <h:commandLink action="/pagina2.jsf">
+            <h:outputText value="vai a /pagina2.jsf"/>
+          </h:commandLink>
+          <br/>
+          <h:commandLink action="/testdb.jsp">
+            <h:outputText value="vai a /testdb.jsp"/>
+          </h:commandLink>
+          <h:commandLink action="/persone.xhtml">
+            <h:outputText value="vai a /persone.xhtml"/>
+          </h:commandLink>
+        	</h:form>
+        </h:body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:sql="http://java.sun.com/jsp/jstl/sql"
+      >
+
+        <h:head>
+            <title>Programma base JSF 2.0</title>
+        </h:head>
+        <h:body>
+        	<h2>Programma base JSF 2.0 - pagina2.xhtml</h2>
+          <p><h:outputText value="${mbean.message}" /> </p>
+
+        	<h:form><br/>
+          <h:commandLink action="/pagina1.xhtml">
+            <h:outputText value="vai a /pagina1.xhtml"/>
+          </h:commandLink><br/><br/>
+          <h:commandLink action="/pagina1.jsf">
+            <h:outputText value="vai a /pagina1.jsf"/>
+          </h:commandLink>
+          <br/>
+          <h:commandLink action="/testdb.jsp">
+            <h:outputText value="vai a /testdb.jsp"/>
+          </h:commandLink>
+        	</h:form>
+
+
+              		<h:dataTable value="#{automob.targhe}" var="targ">
+              				<h:column>
+              				<!-- column header -->
+              				<f:facet name="header">TARGA</f:facet>
+              				<!-- row record -->
+              				#{targ}
+              			</h:column>
+                  </h:dataTable>
+          <sql:query var="rs" dataSource="jdbc/mysqlantoioviDB">
+          select automobile_id,marca,modello,targa,descrizione from automobili
+          </sql:query>
+
+
+          <c:forEach var="row" items="${rs.rows}">
+              Marca       ${row.marca}<br/>
+              Modello     ${row.modello}<br/>
+              Targa       ${row.targa}<br/>
+              Descrizione ${row.descrizione}<br/>
+          </c:forEach>
+
+        </h:body>
+</html>
