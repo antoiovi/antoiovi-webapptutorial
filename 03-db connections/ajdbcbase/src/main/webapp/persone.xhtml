@@ -9,33 +9,25 @@
         </h:head>
         <h:body>
         	<h2>Programma base JSF 2.0 collegamento a database  - persone.xhtml</h2>
-          <h:dataTable value="#{personbean.allPersons}" var="o"
-    			    		>
-
+          <h:dataTable value="#{personbean.allPersons}" var="persona"	>
     			<h:column>
     				<!-- column header -->
     				<f:facet name="header">ID</f:facet>
     				<!-- row record -->
-    				#{o.id}
+    				#{persona.id}
     			</h:column>
-
     			<h:column>
     				<f:facet name="header">Nome</f:facet>
-    				#{o.nome}
+    				#{persona.nome}
     			</h:column>
-
     			<h:column>
     				<f:facet name="header">cognome</f:facet>
-    				#{o.cognome}
+    				#{persona.cognome}
     			</h:column>
-
     			<h:column>
     				<f:facet name="header">Email</f:facet>
-    				#{o.email}
+    				#{persona.email}
     			</h:column>
-
     		</h:dataTable>
-
         </h:body>
-
 </html>
