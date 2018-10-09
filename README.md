@@ -45,3 +45,13 @@ Progetto base creato con il comando
    3 Un backing bean per il collegamento
 
    Vi e' una pagina xhtml per mostrare il contenuto della tabella.
+Comandi maven per compilare il programma :
+Ambiente Application Server
+```sh
+   mvn package
+```
+Ambiente  Servlet Container (Testato su Tomcat Apache Tomcat/9.0.12)
+```sh
+  mvn package -P servletContainer
+```
+
