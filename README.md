@@ -50,7 +50,7 @@ Ambiente Application Server
 ```sh
    mvn package
 ```
-Ambiente  Servlet Container (Testato su Tomcat Apache Tomcat/9.0.12)
+Ambiente  Servlet Container (Testato su Tomcat Apache Tomcat/9.0.12 e su Jetty 9.4)
 ```sh
   mvn package -P servletContainer
 ```
