@@ -59,5 +59,3 @@ Vi e' una pagina xhtml per mostrare il contenuto della tabella.
           Spostarsi nella directory del progetto ajdbcbase/sql
 
          $ ant postgre
-
-         
