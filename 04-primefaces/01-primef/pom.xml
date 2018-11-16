@@ -7,6 +7,14 @@
   <version>1.0-SNAPSHOT</version>
   <name>a1jsf Webapp con semplice backing-bean e pagina jsp</name>
   <url>http://maven.apache.org</url>
+
+  <repositories>
+      <repository>
+          <id>prime-repo</id>
+          <name>PrimeFaces Maven Repository</name>
+          <url>http://repository.primefaces.org</url>
+      </repository>
+</repositories>
   <dependencies>
     <!-- https://mvnrepository.com/artifact/javax.faces/jsf-api -->
     <dependency>
@@ -71,6 +79,12 @@
       <artifactId>jetty-maven-plugin</artifactId>
       <version>9.4.14.v20181114</version>
       <dependencies>
+        <!-- PrimeFaces -->
+        <dependency>
+          <groupId>org.primefaces</groupId>
+          <artifactId>primefaces</artifactId>
+          <version>6.2</version>
+        </dependency>
       <dependency>
         <groupId>com.sun.faces</groupId>
         <artifactId>jsf-api</artifactId>
@@ -91,6 +105,7 @@
     <artifactId>el-impl</artifactId>
       <version>2.2</version>
      </dependency>
+
     </dependencies>
     </plugin>
 </plugins>

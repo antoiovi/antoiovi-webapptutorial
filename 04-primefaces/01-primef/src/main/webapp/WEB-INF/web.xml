@@ -5,19 +5,30 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
-           <listener>
+  <!--Abilitare JSF in Jetty-->
+       <listener>
              <description>Initializes JSF</description>
     	    <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
     	 </listener>
+        <context-param>
+           <param-name>com.sun.faces.forceLoadConfiguration</param-name>
+           <param-value>true</param-value>
+       </context-param>
 
-    	  <context-param>
-    	     <param-name>com.sun.faces.forceLoadConfiguration</param-name>
-    	     <param-value>true</param-value>
-    	 </context-param>
-  <!-- Change to "Production" when you are ready to deploy -->
+  <!--Scegliere il tema Primefaces-
+       <context-param>
+       <param-name>primefaces.THEME</param-name>
+       <param-value>omega</param-value>
+     </context-param> -->
+  <!--Attivare fa icons (https://www.primefaces.org/showcase/ui/misc/fa.xhtml)-->
+       <context-param>
+          <param-name>primefaces.FONT_AWESOME</param-name>
+          <param-value>true</param-value>
+       </context-param>
+<!-- Change to "Production" when you are ready to deploy (Development)-->
 <context-param>
   <param-name>javax.faces.PROJECT_STAGE</param-name>
-  <param-value>Development</param-value>
+  <param-value>Production</param-value>
 </context-param>
 
 <!-- Per evitare ViewExpired Exception ..-->
