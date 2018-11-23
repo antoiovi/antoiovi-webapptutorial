@@ -1,18 +1,29 @@
 package com.antoiovi.a1jdbcbase.model;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.Email;
+
 public class Person {
 
- 	private Long id;
+	@NotNull
+	private Long id;
 
- 	private String username;
+ 	@Size(min = 4, max = 10)
+	private String username;
 
- 	private String nome;
+ 	@Size(min = 2, max = 25)
+	private String nome;
 
- 	private String cognome;
+ 	@Size(min = 2, max = 25)
+	private String cognome;
 
- 		String email;
+	//  @Email ????
+		String email;
 
- 	private String password;
+ 	@Size(min = 4, max = 10)
+	private String password;
 
 	public Person() {
 	}
