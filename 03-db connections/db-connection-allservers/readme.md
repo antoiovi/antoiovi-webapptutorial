@@ -51,7 +51,7 @@ Oppure in JETTY :
 
 
 ### Configurazione database e jndi:
-##TOMCAT 
+## TOMCAT 
 Verifichiamo che sia presente il JDBC Driver nella directory tomcat_insyallation_path/lib. Se non presente copiamo il file jar (nel nostro esempio mysql-connector-java-8.0.12.jar). Aggiungere il seguente codice nel file $CATALINA_HOME/conf/context.xml : .......
 
 	  <Resource name="jdbc/mysqlantoioviDB" auth="Container" type="javax.sql.DataSource"
@@ -62,7 +62,7 @@ Verifichiamo che sia presente il JDBC Driver nella directory tomcat_insyallation
 
 
 
-##JETTY
+## JETTY
 Configurazione server creo una directory di lavoro separata dal server chiamata nome_mia_base mi sposto in essa e la inizzializzo
 
 mkdir nome_mia_base cd nome_mia_base
@@ -103,7 +103,7 @@ Creare File $JETTY_BASE/web/nomefile.xml:
     </New>
 ```
 
-##JBOSS
+## JBOSS
 
 Configurazione datasource Mysql :
 
