@@ -57,7 +57,7 @@ Connection getConnection()  {
 
 public void insertPerson(Person person) {
 	String SQL_INSERT =
-		"INSERT INTO PERSONA (username, nome, cognome, email, password) VALUES (?, ?, ?, ?, ?)";
+		"INSERT INTO PERSONE (username, nome, cognome, email, password) VALUES (?, ?, ?, ?, ?)";
 	PreparedStatement prepstatement= null;
 	Connection connection =this.getConnection();
 	if(connection==null)
