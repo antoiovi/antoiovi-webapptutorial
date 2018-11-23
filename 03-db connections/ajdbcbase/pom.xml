@@ -24,25 +24,7 @@
          <scope>provided</scope>
       </dependency>
 
-
-<!-- AGGIUNTO VALIDATION -->
-<!-- Bean Validation (JSR-303) -->
-     <dependency>
-        <groupId>javax.validation</groupId>
-        <artifactId>validation-api</artifactId>
-       <version>2.0.1.Final</version>
-     <!--   <scope>provided</scope> -->
-     </dependency>
-     <!-- Bean Validation Implementation -->
-     <!-- Provides portable constraints such as @NotEmpty, @Email and @Url -->
-     <!-- Hibernate Validator is only the JSR-303 implementation at the moment, so we can assume it's provided -->
-     <dependency>
-        <groupId>org.hibernate</groupId>
-        <artifactId>hibernate-validator</artifactId>
-        <version>4.0.0.GA</version>
-     <!--   <scope>provided</scope> -->
-     </dependency>
-
+ 
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
