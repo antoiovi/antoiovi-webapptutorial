@@ -1,3 +1,11 @@
+
+Semplice applicazione con minima configurazione JSF e database connaction, eseguibile su qualunque server(JBoss, Jetty,Tomcat,Jetty with maven plugin);
+
+Simple web application with minimal JSF and dbconnaction configuration, deplyable on every kind ov server (JBoss, Jetty,Tomcat,Jetty with maven plugin)
+
+
+
+
 ### CREAZIONE database
 ```
 mysql> create database antoiovi_tutorials;
@@ -20,7 +28,15 @@ PRIMARY KEY (persona_id) ) ENGINE=INNODB;
 INSERT INTO persone(username,nome,cognome,email,password) VALUES ("ant01","Antos","Bellis","antp@ader.it","password1"); 
 INSERT INTO persone(username,nome,cognome,email,password) VALUES ("ant02","Antoss","Belliss","anntp@ader.it","password2");
 ```
+### VARIE
+
+Il nome dell'applicazione è qui "antoioviDB", ed il file è antoioviDB.war; può essere modificato nel file pom.xml nel tag build/finalName;
+Prima di compilare ed eseguire configurare i server come mostarto più avanti.
+
+
+
 ### JETTY MVN plugin
+(In questo caso non c'è bisogno di nessuna ulteriore configurazione del server)
 Eseguire :
 
 	mvn clean jetty:run
@@ -35,11 +51,11 @@ la applicazione si trova in 127.0.0.1:8888/abc
 
 2 Copiare il file war nella directory di deploy  TOMCAT 
 
-	cp target/ajdbcbase2.war /home/antoiovi/apache-tomcat-9.0.12/webapps/
+	cp target/antoioviDB.war /home/antoiovi/apache-tomcat-9.0.12/webapps/
 
 Oppure in JETTY :
 
-	cp target/ajdbcbase2.war $jetty_base/webapps/
+	cp target/antoioviDB.war $jetty_base/webapps/
 
 ### APPLICATION SERVER (JBOSS)
 
@@ -47,7 +63,7 @@ Oppure in JETTY :
 
 2 Copiare il file war nella directory di deploy :
 
-	cp target/ajdbcbase2.war {EAP_HOME}/standalone/deployments/
+	cp target/antoioviDB.war {EAP_HOME}/standalone/deployments/
 
 
 ### Configurazione database e jndi:
@@ -58,8 +74,6 @@ Verifichiamo che sia presente il JDBC Driver nella directory tomcat_insyallation
               maxTotal="100" maxIdle="30" maxWaitMillis="10000"
               username="sa" password="sa" driverClassName="com.mysql.jdbc.Driver"
               url="jdbc:mysql://localhost:3306/antoiovi_tutorials?&amp;serverTimezone=UTC"/> 
-
-
 
 
 ## JETTY
