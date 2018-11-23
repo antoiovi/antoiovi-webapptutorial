@@ -121,11 +121,8 @@ Creare File $JETTY_BASE/web/nomefile.xml:
 
 Configurazione datasource Mysql :
 
-
-
-    creare un modulo jboss di nome "com.mysql.driver"
-     e poi registrarlo nel server (qui usiamo jboss-cli.sh);
-    poi si registar la JNDI che fa riferimento al datasource nel file standalone.xml
+Creare un modulo jboss di nome "com.mysql.driver" e poi registrarlo nel server (qui usiamo jboss-cli.sh);
+poi si registar la JNDI che fa riferimento al datasource nel file standalone.xml
 
 
 ### Creazione modulo  "com.mysql.driver"
@@ -145,13 +142,13 @@ Dentro questa directory copiare il mysql-connector-java-x.x.xx.jar e  e creare u
 </module>
 ```
 ### Registrazione modulo (tramite command line )
-${EAP_HOME}/bin : ./standalone.sh
-${EAP_HOME}/bin : /jboss-cli
-You are disconnected at the moment. Type 'connect' to connect to the server or 'help' for the list of supported commands.
-[disconnected /] connect
-[standalone@localhost:9990 /] /subsystem=datasources/jdbc-driver=mysql:add(driver-name=mysql,driver-module-name=com.mysql.driver,driver-class-name=com.mysql.jdbc.Driver)
-    {"outcome" => "success"}
-    [standalone@localhost:9990 /] 
+	${EAP_HOME}/bin $ ./standalone.sh
+	${EAP_HOME}/bin $ /jboss-cli
+	You are disconnected at the moment. Type 'connect' to connect to the server or 'help' for the list of supported commands.
+	[disconnected /] connect
+	[standalone@localhost:9990 /] /subsystem=datasources/jdbc-driver=mysql:add(driver-name=mysql,driver-module-name=com.mysql.driver,driver-class-name=com.mysql.jdbc.Driver)
+	{"outcome" => "success"}
+	[standalone@localhost:9990 /] 
 
 ### Configurare datasource nel file standalone.xml
 Mettere il datasource ed il driver nel file standalone.xml :
