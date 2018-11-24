@@ -11,14 +11,14 @@
         	<h2>Programma base JSF 2.0 collegamento a database  - persone.xhtml</h2>
           <h:form><br/>
               <h:commandLink action="/newperson.xhtml">
-              <h:outputText value="Aggiungi persona " />
+              <h:outputText value="Add new person " />
             </h:commandLink><br/>
-            <h:commandLink action="/pagina1.xhtml">
-            <h:outputText value="Vai ad inizio pagina " />
+            <h:commandLink action="/home.xhtml">
+            <h:outputText value="Home " />
           </h:commandLink>
           <br/>
           </h:form>
-          <h:dataTable value="#{personbean.allPersons}" var="persona"	>
+          <h:dataTable value="#{personbean.allPersons}" var="person"	>
     			<h:column>
     				<!-- column header -->
     				<f:facet name="header">ID</f:facet>
@@ -27,19 +27,19 @@
     			</h:column>
           <h:column>
             <f:facet name="header">Username</f:facet>
-            #{persona.username}
+            #{person.username}
           </h:column>
     			<h:column>
-    				<f:facet name="header">Nome</f:facet>
-    				#{persona.nome}
+    				<f:facet name="header">First name</f:facet>
+    				#{person.firstname}
     			</h:column>
     			<h:column>
-    				<f:facet name="header">cognome</f:facet>
-    				#{persona.cognome}
+    				<f:facet name="header">Last name</f:facet>
+    				#{person.lastname}
     			</h:column>
     			<h:column>
     				<f:facet name="header">Email</f:facet>
-    				#{persona.email}
+    				#{person.email}
     			</h:column>
     		</h:dataTable>
         </h:body>

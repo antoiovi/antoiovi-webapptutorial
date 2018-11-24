@@ -2,6 +2,7 @@ package com.antoiovi.a1jdbcbase;
 
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 
 import javax.annotation.PostConstruct;
 
@@ -14,7 +15,15 @@ import com.antoiovi.a1jdbcbase.model.Person;
 @RequestScoped
 @ManagedBean(name = "personbean")
 public class Personbean {
-	PersonDao persondao;
+
+
+  @ManagedProperty(value="#{persondao}")
+  private	PersonDao persondao;
+
+
+public void setPersondao(PersonDao _persondao){
+  this.persondao=_persondao;
+}
 
 	public Personbean() {
 	}
@@ -25,10 +34,8 @@ private Person newperson;
 
 @PostConstruct
 public void init(){
-	persondao=new PersonDao();
 	allPersons=persondao.findAllPerson();
 	this.newperson=new Person();
-
 }
 
 	private List<Person> allPersons;

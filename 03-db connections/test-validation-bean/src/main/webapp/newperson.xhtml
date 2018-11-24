@@ -10,12 +10,12 @@
         <h:body>
         	<h2>aggingi persona </h2>
                   <h:form><br/>
-                    <h:commandLink action="/persone.xhtml">
-                    <h:outputText value="vai a /persone.xhtml" />
+                    <h:commandLink action="/persons.xhtml">
+                    <h:outputText value="Show persons" />
                   </h:commandLink>
                   <br/>
-                  <h:commandLink action="/pagina1.xhtml">
-                  <h:outputText value="Vai ad inizio pagina " />
+                  <h:commandLink action="/home.xhtml">
+                  <h:outputText value="Home " />
                 </h:commandLink>
 
                   <br/>
@@ -27,20 +27,17 @@
                       <h:message for="username" style="color:red" />
 
                       <h:outputLabel value="Nome:" for="nome"/>
-                      <h:inputText id="nome" value="#{personbean.newperson.nome}"/>
+                      <h:inputText id="nome" value="#{personbean.newperson.firstname}"/>
                       <h:message for="nome" style="color:red" />
 
                       <h:outputLabel value="cognome:" for="cognome"/>
-                      <h:inputText id="cognome" value="#{personbean.newperson.cognome}"/>
+                      <h:inputText id="cognome" value="#{personbean.newperson.lastname}"/>
                       <h:message for="cognome" style="color:red" />
 
                       <h:outputLabel value="Email:" for="email"/>
                       <h:inputText id="email" value="#{personbean.newperson.email}"/>
                       <h:message for="email" style="color:red" />
 
-                      <h:outputLabel value="Password:" for="password"/>
-                      <h:inputText id="password" value="#{personbean.newperson.password}"/>
-                      <h:message for="password" style="color:red" />
 
                   </h:panelGrid>
                   <h:commandButton value="Salva" action="#{personbean.saveNewPerson}"/>
