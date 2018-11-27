@@ -19,7 +19,7 @@ public class Person {
  	@Size(min = 2, max = 25)
 	private String lastname;
 
-	//  @Email ????
+	  @Email
 		String email;
 
  	@Size(min = 4, max = 10)

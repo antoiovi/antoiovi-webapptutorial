@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+        <h:head>
+            <title>Programma base JSF 2.0</title>
+        </h:head>
+        <h:body>
+        	<h2>aggingi persona </h2>
+                  <h:form><br/>
+                    <h:commandLink action="/persons.xhtml">
+                    <h:outputText value="Show persons" />
+                  </h:commandLink>
+                  <br/>
+                  <h:commandLink action="/home.xhtml">
+                  <h:outputText value="Home " />
+                </h:commandLink>
+
+                  <br/>
+                </h:form>
+              <h:form>
+                  <h:panelGrid columns="3">
+                      <h:outputLabel value="Username:" for="username"/>
+                      <h:inputText id="username" value="#{personbean.newperson.username}"/>
+                      <h:message for="username" style="color:red" />
+
+                      <h:outputLabel value="Nome:" for="nome"/>
+                      <h:inputText id="nome" value="#{personbean.newperson.firstname}"/>
+                      <h:message for="nome" style="color:red" />
+
+                      <h:outputLabel value="cognome:" for="cognome"/>
+                      <h:inputText id="cognome" value="#{personbean.newperson.lastname}"/>
+                      <h:message for="cognome" style="color:red" />
+
+                      <h:outputLabel value="Email:" for="email"/>
+                      <h:inputText id="email" value="#{personbean.newperson.email}"/>
+                      <h:message for="email" style="color:red" />
+
+
+                  </h:panelGrid>
+                  <h:commandButton value="Salva" action="#{personbean.saveNewPerson}"/>
+              </h:form>
+
+
+        </h:body>
+</html>
