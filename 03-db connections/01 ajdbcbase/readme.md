@@ -1,31 +1,35 @@
+# ajdbcbase
+
 Progetto base jsf per connessione a database senza JPA (Java Persistence Api).
 Vi e' una pagina xhtml per mostrare il contenuto della tabella.
 
-+ Comandi maven per compilare il programma :
+## Comandi maven per compilare il programma :
 
-++Ambiente Application Server
+### Ambiente Application Server
 
-   mvn package
+  mvn package
 
-++Ambiente Servlet Container (Testato su Tomcat Apache Tomcat/9.0.12 e su Jetty 9.4)
+###Ambiente Servlet Container (Testato su Tomcat Apache Tomcat/9.0.12 e su Jetty 9.4)
 
   mvn package -P servletContainer
 
-+Configurazione mysql
+## Configurazione mysql
 
-++Tomcat (9.0.12)
+###Tomcat (9.0.12)
 
   ${CATALINA_HOME}/lib/mysql-connector-java-8.0.12.jar
 
-  aggiungere il segunet codice nel file  TomcatInstallationPath/conf/context.xml :
-  <!-- Aggiunto database di test mysql  -->
+aggiungere il seguente codice nel file  TomcatInstallationPath/conf/context.xml :
+```XML
+<!-- Aggiunto database di test mysql  -->
  <Resource name="jdbc/mysqlantoioviDB" auth="Container" type="javax.sql.DataSource"
-             maxTotal="100" maxIdle="30" maxWaitMillis="10000"
+            maxTotal="100" maxIdle="30" maxWaitMillis="10000"
              username="sa" password="sa" driverClassName="com.mysql.jdbc.Driver"
              url="jdbc:mysql://localhost:3306/antoiovi_tutorials?&amp;serverTimezone=UTC"/>
 </Context>
+```
 
-++ Jetty (9.4)
+###Jetty (9.4)
 
   ${jetty_base}/lib/ext/commons-dbcp-1.4.jar
   ${jetty_base}/lib/ext/commons-pool-1.6.jar
@@ -33,6 +37,7 @@ Vi e' una pagina xhtml per mostrare il contenuto della tabella.
 
 
 Creare il file $JETTY_BASE/web/nomefile.xml:
+```XML
   <?xml version="1.0"?>
   <!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://www.eclipse.org/jetty/configure_9_3.dtd">
   <Configure id='wac' class="org.eclipse.jetty.webapp.WebAppContext">
@@ -55,8 +60,10 @@ Creare il file $JETTY_BASE/web/nomefile.xml:
             </Arg>
            </New>
   </Configure>
+  ```
 
-  oppure aggiungere il seguente codice nel file $JETTY_HOME/etc/jetty.xml:
+oppure aggiungere il seguente codice nel file $JETTY_HOME/etc/jetty.xml:
+```XML
   <New id="jdbc/mysqlantoioviDB" class="org.eclipse.jetty.plus.jndi.Resource">
           <Arg></Arg>
           <Arg>jdbc/mysqlantoioviDB</Arg>
@@ -69,27 +76,29 @@ Creare il file $JETTY_BASE/web/nomefile.xml:
               </New>
           </Arg>
          </New>
+```
 
-+CREAZIONE DATABASE
-  ++Mysql
+# CREAZIONE DATABASE
+  ##Mysql
 
-    create database antoiovi_tutorials;
+create database antoiovi_tutorials
+```SQL
     CREATE USER 'sa'@'localhost' IDENTIFIED BY 'sa';
     CREATE USER 'sa'@'%' IDENTIFIED BY 'sa';
     GRANT ALL ON antoiovi_tutorials.* TO 'sa'@'localhost';
     GRANT ALL ON antoiovi_tutorials.* TO 'sa'@'%';
+```
 
-
-        Verficare che nel file ajdbcbase/sql/build.xml
-         il tag <pathelement..> sia  impostato con il path in cui si trova il driver JDBC
-         (Nell esempio : /usr/share/java/mysql-connector-java-8.0.12.jar)
-         Spostarsi nella directory del progetto ajdbcbase/sql
+Verficare che nel file ajdbcbase/sql/build.xml  il tag <pathelement..> sia
+impostato con il path in cui si trova il driver JDBC
+(Nell esempio : /usr/share/java/mysql-connector-java-8.0.12.jar)
+Spostarsi nella directory del progetto ajdbcbase/sql
 
       $ ant mysql
 
 
-    ++Postgresql
-
+  ##Postgresql
+```SQL
       CREATE ROLE sa;
       ALTER USER sa PASSWORD 'sa';
       alter role sa  with LOGIN ;
@@ -97,11 +106,12 @@ Creare il file $JETTY_BASE/web/nomefile.xml:
       \c antoiovi ;
        CREATE SCHEMA tutorials;
        alter schema tutorials owner to sa;
+```
 
-          Verficare che nel file ajdbcbase/sql/build.xml
-          il tag <pathelement..> sia  impostato con il path in cui si trova il driver JDBC
-          (Nell esempio : /usr/share/java/postgresql-42.2.5.jar)
-          Spostarsi nella directory del progetto ajdbcbase/sql
-          Spostarsi nella directory del progetto ajdbcbase/sql
+Verficare che nel file ajdbcbase/sql/build.xml
+il tag <pathelement..> sia  impostato con il path in cui si trova il driver JDBC
+(Nell esempio : /usr/share/java/postgresql-42.2.5.jar)
+Spostarsi nella directory del progetto ajdbcbase/sql
+Spostarsi nella directory del progetto ajdbcbase/sql
 
-         $ ant postgre
+  $ ant postgre
