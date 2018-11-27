@@ -1,4 +1,14 @@
-# Program to verify funzionality of javax.validation api
+# asimuldao
+
+Programma base che ha un simulatore di databaes implementando un dao (PersonDao)
+tramite List e ArrayList.
+Da usare come base per programmi di test senza la necessita di creare
+collegamenti a database
+
+To be used as bases to test programs , whithout the need to build a databse
+connection.
+
+
 
 The program is composed of a bean (Person.java) , a class tha simulate a database,
 which instead of connecting to a Database , implements a List of Persons with an
