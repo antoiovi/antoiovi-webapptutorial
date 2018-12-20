@@ -1,0 +1,16 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
+<Configure id ="mydb" class="org.eclipse.jetty.webapp.WebAppContext">
+<New id="jdbc/mysqlantoioviDB" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg></Arg>
+        <Arg>jdbc/mysqlantoioviDB</Arg>
+        <Arg>
+            <New class="org.apache.commons.dbcp.BasicDataSource">
+               <Set name="driverClassName">com.mysql.jdbc.Driver</Set>
+               <Set name="url">jdbc:mysql://localhost:3306/antoiovi_tutorials?&amp;serverTimezone=UTC</Set>
+               <Set name="username">sa</Set>
+               <Set name="password">sa</Set>
+            </New>
+        </Arg>
+       </New>
+</Configure>

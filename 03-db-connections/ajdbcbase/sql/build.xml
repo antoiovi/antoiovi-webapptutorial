@@ -1,0 +1,33 @@
+<project>
+    <sql driver="com.mysql.jdbc.Driver"
+     url="jdbc:mysql://localhost:3306/antoiovi_tutorials"
+     userid="sa"
+     password="sa"
+     print="yes"
+     output="outputfile.txt">
+     <connectionProperty name="serverTimezone" value="UTC"/>
+  <classpath>
+    <pathelement location="/usr/share/java/mysql-connector-java-8.0.12.jar"/>
+  </classpath>
+  <transaction  src="table.sql"/>
+  <transaction  src="insert.sql"/>
+  </sql>
+
+
+<target name="postgre">
+    <sql driver="org.postgresql.Driver"
+     url="jdbc:postgresql://localhost:5432/antoiovi"
+     userid="sa"
+     password="sa"
+     print="yes"
+     output="outputfile.txt">
+  <classpath>
+    <pathelement location="/usr/share/java/postgresql-42.2.5.jar"/>
+  </classpath>
+  <transaction  src="sql/tablepostgre.sql"/>
+  <transaction  src="sql/insertpostgre.sql"/>
+  </sql>
+</target>
+
+
+</project>
