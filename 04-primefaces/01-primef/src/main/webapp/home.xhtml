@@ -1,18 +1,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:p="http://primefaces.org/ui">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 
-    <h:head>
-    </h:head>
+<h:head>
+</h:head>
 
-    <h:body>
-    <h:form><br/>
-    <h:commandLink action="/menutab.jsf">
-      <h:outputText value="vai a menutab"/>
-      <f:param name="i" value="0" />
-    </h:commandLink><br/><br/>
-    </h:form>
+<h:body>
+	<i class="pi pi-check"></i>
+	<i class="pi pi-times"></i>
 
-    </h:body>
+	<p:tabMenu activeIndex="#{param.i}">
+		<p:menuitem value="Home" outcome="/home.jsf"
+			icon="ui-icon ui-icon-home">
+			<f:param name="i" value="0" />
+		</p:menuitem>
+		<p:menuitem value="Pagina2 " outcome="/pagina2.jsf"
+			icon="ui-icon ui-icon-star">
+			<f:param name="i" value="1" />
+		</p:menuitem>
+	</p:tabMenu>
+	<p:panel>
+		<p>
+			<h:outputText value="#{param.msg}" />
+		</p>
+	</p:panel>
+
+</h:body>
 </html>

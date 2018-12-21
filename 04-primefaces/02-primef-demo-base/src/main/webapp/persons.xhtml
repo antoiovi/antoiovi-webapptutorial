@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/template.xhtml">
+	<ui:define name="content">
+		<p:panel id="basic" header="Nuova persona" style="margin-bottom:20px">
+			<h:form id="newPersonForm">
+			    <p:messages showDetail="true" autoUpdate="true" closable="true"/>
+				<h:panelGrid columns="3">
+					<h:outputLabel value="Username:" for="username" />
+					<h:inputText id="username" label="Username"
+						value="#{personbean.newperson.username}" />
+					<h:message for="username" style="color:red" />
+
+					<h:outputLabel value="Nome:" for="nome" />
+					<h:inputText id="nome" label="First name"
+						value="#{personbean.newperson.firstname}" />
+					<h:message for="nome" style="color:red" />
+
+					<h:outputLabel value="cognome:" for="cognome" />
+					<h:inputText id="cognome" label="Last name"
+						value="#{personbean.newperson.lastname}" />
+					<h:message for="cognome" style="color:red" />
+
+					<h:outputLabel value="Email:" for="email" />
+					<h:inputText id="email" label="Email"
+						value="#{personbean.newperson.email}" />
+					<h:message for="email" style="color:red" />
+				</h:panelGrid>
+				<h:commandButton value="Save" action="#{personbean.saveNewPerson}" />
+			</h:form>
+
+		</p:panel>
+
+
+		<p:dataTable var="person" value="#{personbean.allPersons}"
+		paginator="true"  
+        paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+         >
+			<p:column headerText="Id">
+				<h:outputText value="#{persona.id}" />
+			</p:column>
+			<p:column headerText="Username">
+				<h:outputText value="#{person.username}" />
+			</p:column>
+			<p:column headerText="Nome">
+				<h:outputText value="#{person.firstname}" />
+			</p:column>
+			<p:column headerText="Cognome">
+				<h:outputText value="#{person.lastname}" />
+			</p:column>
+			<p:column headerText="Emai;">
+				<h:outputText value="#{person.email}" />
+			</p:column>
+
+
+		</p:dataTable>
+
+	</ui:define>
+
+</ui:composition>
+
