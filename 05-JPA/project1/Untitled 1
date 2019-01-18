@@ -1,0 +1,40 @@
+<!-- 
+ 
+ jdbc:mysql://localhost:3306/antoiovi_tutorials?&amp;serverTimezone=UTC
+ 
+  ~/apache-tomee-webprofile-1.7.4/lib/mysql-connector-java-8.0.12.jar
+ 
+ 
+ 
+jpa-generate-entities-from-tables
+--connection-profile  --driver-location     --jdbc-url            --target-package      --user-password      
+--driver-class        --hibernate-dialect   --save-user-password  --user-name           --verify-connection
+
+ 
+ 
+ jpa-generate-entities-from-tables  --jdbc-url jdbc:mysql://localhost:3306/antoiovi_tutorials?&amp;serverTimezone=UTC  --driver-location ./mysql-connector-java-8.0.12.jar --driver-class com.mysql.jdbc.Driver  --user-password  sa --user-name sa     --hibernate-dialect org.hibernate.dialect.MySQL5Dialect
+   
+   
+   
+ jpa-generate-entities-from-tables --jdbc-url jdbc:mysql://localhost:3306/antoiovi_tutorials?serverTimezone=UTC  --driver-location ./mysql-connector-java-8.0.12.jar --driver-class com.mysql.jdbc.Driver  --user-password  sa --user-name sa     --hibernate-dialect org.hibernate.dialect.MySQL5Dialect
+   
+--verify-connection 
+   
+   
+ jdbc:mysql://localhost:3306/antoiovi_tutorials?serverTimezone=UTC& characterEncoding=UTF-8&characterSetResults= UTF-8&autoReconnect=true 
+ 
+  jpa-generate-entities-from-tables  
+  	--jdbc-url 
+jdbc:mysql://localhost:3306/antoiovi_tutorials?serverTimezone=UTC?tableName=persone
+
+    --driver-location 
+./mysql-connector-java-8.0.12.jar
+  	--driver-class
+  		 com.mysql.jdbc.Driver
+     --user-password  sa --user-name sa
+  	  	 --hibernate-dialect org.hibernate.dialect.MySQL5Dialect
+ 
+ jpa-generate-entities-from-tables --jdbc-url jdbc:mysql://localhost:3306/antoiovi_tutorials?serverTimezone=UTC  --driver-location ./mysql-connector-java-8.0.12.jar --driver-class com.mysql.jdbc.Driver  --user-password  sa --user-name sa     --hibernate-dialect org.hibernate.dialect.MySQL5Dialect --database-tables persone
+ 
+ 
+   -->
