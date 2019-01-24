@@ -28,15 +28,7 @@ public class UserDao implements UserDaoRemote, UserDaoLocal {
         // TODO Auto-generated constructor stub
     }
  
-
-/**
- * DAO for Persone
- */
-@Stateless
-public class PersoneDao {
-	@PersistenceContext(unitName = "antoioviPU")
-	private EntityManager em;
-
+ 
 	public void create(User entity) {
 		em.persist(entity);
 	}
@@ -80,6 +72,4 @@ public class PersoneDao {
 	}
 }
 
-   
-    
-}
+ 

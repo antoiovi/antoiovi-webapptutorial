@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/template.xhtml">
+
+	<ui:define name="content">
+		<p:panel id="basic" header="" style="margin-bottom:20px">
+			<h:form id="f1">
+				<p:messages showDetail="true" autoUpdate="true" closable="true" />
+				<h:panelGrid columns="3">
+
+					
+					<h:outputLabel value="UserId:" for="userId" />
+					<h:inputText id="userId" label="UserId"
+						value="#{userBean.newuser.userId}" />
+					<h:message for="userId" style="color:red" />
+
+					<h:outputLabel value="Username:" for="username" />
+					<h:inputText id="username" label="Username"
+						value="#{userBean.newuser.username}" />
+					<h:message for="username" style="color:red" />
+
+					<h:outputLabel value="Firstname:" for="firstname" />
+					<h:inputText id="firstname" label="Firstname"
+						value="#{userBean.newuser.firstname}" />
+					<h:message for="firstname" style="color:red" />
+
+					<h:outputLabel value="Lastname:" for="lastname" />
+					<h:inputText id="lastname" label="Lastname"
+						value="#{userBean.newuser.lastname}" />
+					<h:message for="lastname" style="color:red" />
+
+					<h:outputLabel value="Email:" for="email" />
+					<h:inputText id="email" label="Email"
+						value="#{userBean.newuser.email}" />
+					<h:message for="email" style="color:red" />
+
+					<h:outputLabel value="Password:" for="password" />
+					<h:inputText id="password" label="Password"
+						value="#{userBean.newuser.password}" />
+					<h:message for="password" style="color:red" />
+
+					
+
+				</h:panelGrid>
+					<h:commandButton value="Save" action="#{userBean.saveNewUser()}" />
+			</h:form>
+
+		</p:panel>
+	
+ 	</ui:define>
+</ui:composition>

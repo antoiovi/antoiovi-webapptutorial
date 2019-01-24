@@ -19,8 +19,8 @@ public class Group implements Serializable {
 	private String groupName;
 
 	//bi-directional many-to-one association to Role
-	@OneToMany(mappedBy="group")
-	private List<Role> roles;
+	//@OneToMany(mappedBy="group")
+	//private List<Role> roles;
 
 	public Group() {
 	}
@@ -33,26 +33,8 @@ public class Group implements Serializable {
 		this.groupName = groupName;
 	}
 
-	public List<Role> getRoles() {
-		return this.roles;
-	}
 
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
-	}
 
-	public Role addRole(Role role) {
-		getRoles().add(role);
-		role.setGroup(this);
-
-		return role;
-	}
-
-	public Role removeRole(Role role) {
-		getRoles().remove(role);
-		role.setGroup(null);
-
-		return role;
-	}
+	
 
 }

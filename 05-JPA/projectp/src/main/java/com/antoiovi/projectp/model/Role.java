@@ -17,8 +17,8 @@ public class Role implements Serializable {
 	private int idrole;
 
 	//bi-directional many-to-one association to Group
-	@ManyToOne
-	@JoinColumn(name="group_name")
+//	@ManyToOne
+	//@JoinColumn(name="group_name")
 	private Group group;
 
 	//bi-directional many-to-one association to User

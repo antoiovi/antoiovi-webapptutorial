@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:p="http://primefaces.org/ui"
+		template="/WEB-INF/template/template.xhtml">
+			
+ <ui:define name="content">
+ <p:link outcome="/users/New.jsf" value="Nuovo utente">
+     
+</p:link>
+	<p:dataTable var="user" value="#{userBean.allUser}"> 
+	
+		<p:column headerText="userId" width="25">
+			<h:outputText value="#{user.userId}"/>
+		</p:column>
+		<p:column headerText="username" width="10">
+			<h:outputText value="#{user.username}"/>
+		</p:column>
+		<p:column headerText="firstname" width="10">
+			<h:outputText value="#{user.firstname}"/>
+		</p:column>
+		<p:column headerText="lastname" width="10">
+			<h:outputText value="#{user.lastname}"/>
+		</p:column>
+		<p:column headerText="email" width="25">
+			<h:outputText value="#{user.email}"/>
+		</p:column>
+		<p:column headerText="password" width="256">
+			<h:outputText value="#{user.password}"/>
+		</p:column>
+	
+	</p:dataTable>
+ </ui:define>
+</ui:composition>
