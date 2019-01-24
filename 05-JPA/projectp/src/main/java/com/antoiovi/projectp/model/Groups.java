@@ -10,8 +10,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 @Entity
-@NamedQuery(name="Group.findAll", query="SELECT g FROM Group g")
-public class Group implements Serializable {
+@NamedQuery(name="Groups.findAll", query="SELECT g FROM Groups g")
+public class Groups implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -22,7 +22,7 @@ public class Group implements Serializable {
 	//@OneToMany(mappedBy="group")
 	//private List<Role> roles;
 
-	public Group() {
+	public Groups() {
 	}
 
 	public String getGroupName() {

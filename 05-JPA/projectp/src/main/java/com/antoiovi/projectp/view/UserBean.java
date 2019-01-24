@@ -27,10 +27,12 @@ public class UserBean {
 	public void init() {
 		allUser=new ArrayList<User>();
 		allUser=userDao.listAll();
+		newuser=new User();
 	}
 	
 	
 	public void saveNewUser() {
+		userDao.create(newuser);
 		return;
 	}
  

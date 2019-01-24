@@ -19,7 +19,7 @@ public class Role implements Serializable {
 	//bi-directional many-to-one association to Group
 //	@ManyToOne
 	//@JoinColumn(name="group_name")
-	private Group group;
+	private Groups group;
 
 	//bi-directional many-to-one association to User
 	@ManyToOne
@@ -37,11 +37,11 @@ public class Role implements Serializable {
 		this.idrole = idrole;
 	}
 
-	public Group getGroup() {
+	public Groups getGroup() {
 		return group;
 	}
 
-	public void setGroup(Group group) {
+	public void setGroup(Groups group) {
 		this.group = group;
 	}
 
