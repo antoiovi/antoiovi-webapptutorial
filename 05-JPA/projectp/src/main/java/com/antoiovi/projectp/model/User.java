@@ -39,12 +39,10 @@ public class User implements Serializable {
 	@Size(max = 256)
 	@Column(name="password")
 	private String password;
-
+ 
 	//bi-directional many-to-one association to Role
-		@OneToMany(mappedBy="user")
-		private List<Role> roles;
-
-
+	@OneToMany(mappedBy="user")
+	private List<Roles> roles;
 	public User() {
 		super();
 	}
@@ -119,6 +117,18 @@ public class User implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+
+
+	public List<Roles> getRoles() {
+		return roles;
+	}
+
+
+
+	public void setRoles(List<Roles> roles) {
+		this.roles = roles;
 	}
 
 	

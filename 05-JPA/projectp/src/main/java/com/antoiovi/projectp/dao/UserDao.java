@@ -50,7 +50,7 @@ public class UserDao implements UserDaoRemote, UserDaoLocal {
 
 	public List<User> listAll(Integer startPosition, Integer maxResult) {
 		TypedQuery<User> findAllQuery = em.createQuery(
-				"SELECT DISTINCT p FROM user p ORDER BY p.userId",
+				"SELECT DISTINCT p FROM User p ORDER BY p.userId",
 				User.class);
 		if (startPosition != null) {
 			findAllQuery.setFirstResult(startPosition);
