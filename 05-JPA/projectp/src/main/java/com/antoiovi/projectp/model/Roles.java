@@ -23,11 +23,23 @@ public class Roles implements Serializable {
 	@JoinColumn(name="user_name")
 	private User user;
 	
-	@Size(min=5, max = 10)
+	
+	//bi-directional many-to-one association to Group
+		@ManyToOne
+		@JoinColumn(name="group_name")
+		private Groups groups;
+	
+	/*@Size(min=5, max = 10)
 	@Column(name="group_name")
-	private String group;
+	private String group;*/
 
 	public Roles() {
+	}
+
+	public Roles(User user, Groups groups) {
+		super();
+		this.user = user;
+		this.groups = groups;
 	}
 
 	public int getIdrole() {
@@ -48,14 +60,15 @@ public class Roles implements Serializable {
 		this.user = user;
 	}
 
-	public String getGroup() {
-		return group;
+	public Groups getGroups() {
+		return groups;
 	}
 
-	public void setGroup(String group) {
-		this.group = group;
+	public void setGroups(Groups groups) {
+		this.groups = groups;
 	}
- 
+
+	
 	 
 
 }

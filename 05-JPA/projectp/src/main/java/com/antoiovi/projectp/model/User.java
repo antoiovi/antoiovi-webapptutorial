@@ -22,7 +22,7 @@ public class User implements Serializable {
 	private Integer userId;
 
 	@Size(min = 4, max = 10)
-	@Column(name="user_name")
+	@Column(name="user_name",unique=true)
 	private String username;
 
 	@Size(min = 4, max = 10)
@@ -45,6 +45,17 @@ public class User implements Serializable {
 	private List<Roles> roles;
 	public User() {
 		super();
+	}
+
+
+
+	public User(String username, String firstname, String lastname, String email, String password) {
+		super();
+		this.username = username;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.password = password;
 	}
 
 
