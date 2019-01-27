@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
-import com.antoiovi.projectp.model.Groups;
+
 import com.antoiovi.projectp.model.Roles;
 import com.antoiovi.projectp.model.User;
 
@@ -35,9 +35,7 @@ public class UserDao implements UserDaoRemote, UserDaoLocal {
 		em.persist(entity);
 	}
 
-	public void createGroup(Groups entity) {
-		em.persist(entity);
-	}
+	 
 	public void createRole(Roles entity) {
 		em.persist(entity);
 	}

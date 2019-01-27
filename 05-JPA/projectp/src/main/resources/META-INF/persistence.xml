@@ -5,7 +5,7 @@
     <persistence-unit name="prod" transaction-type="JTA">
         <properties>
             <!-- 'update' is a nonstandard action, but Hibernate supports it -->
-            <property name="javax.persistence.schema-generation.database.action" value="update"/>
+            <property name="javax.persistence.schema-generation.database.action" value="create-drop"/>
         
         </properties>
     </persistence-unit>

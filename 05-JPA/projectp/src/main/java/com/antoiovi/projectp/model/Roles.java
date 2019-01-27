@@ -18,16 +18,9 @@ public class Roles implements Serializable {
 	private int idrole;
 
 	 
-	//bi-directional many-to-one association to User
-	@ManyToOne
-	@JoinColumn(name="user_name")
-	private User user;
-	
-	
-	//bi-directional many-to-one association to Group
-		@ManyToOne
-		@JoinColumn(name="group_name")
-		private Groups groups;
+	 
+    @Column(unique = true, nullable=false)
+    private String role;
 	
 	/*@Size(min=5, max = 10)
 	@Column(name="group_name")
@@ -36,11 +29,14 @@ public class Roles implements Serializable {
 	public Roles() {
 	}
 
-	public Roles(User user, Groups groups) {
+	
+
+	public Roles(String role) {
 		super();
-		this.user = user;
-		this.groups = groups;
+		this.role = role;
 	}
+
+
 
 	public int getIdrole() {
 		return this.idrole;
@@ -50,24 +46,18 @@ public class Roles implements Serializable {
 		this.idrole = idrole;
 	}
 
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 	 
+ 
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public Groups getGroups() {
-		return groups;
-	}
-
-	public void setGroups(Groups groups) {
-		this.groups = groups;
-	}
-
+	 
 	
 	 
 

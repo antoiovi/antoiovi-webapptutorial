@@ -1,6 +1,7 @@
 package com.antoiovi.projectp.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -25,11 +26,11 @@ public class User implements Serializable {
 	@Column(name="user_name",unique=true)
 	private String username;
 
-	@Size(min = 4, max = 10)
+	@Size(min = 4, max = 25)
 	@Column(name="first_name")
 	private String firstname;
 
-	@Size(min = 4, max = 10)
+	@Size(min = 4, max = 25)
 	@Column(name="last_name")
 	private String lastname;
 	
@@ -40,11 +41,24 @@ public class User implements Serializable {
 	@Column(name="password")
 	private String password;
  
-	//bi-directional many-to-one association to Role
-	@OneToMany(mappedBy="user")
-	private List<Roles> roles;
+	@ManyToMany(fetch=FetchType.EAGER)
+	@JoinTable(name="user_role",
+		joinColumns=@JoinColumn(
+				name="user_name",referencedColumnName="user_name"),
+		inverseJoinColumns=@JoinColumn(
+			name="role",	referencedColumnName="role")
+	)
+	
+	private List<Roles> roles=new ArrayList<Roles>();
+	
 	public User() {
 		super();
+	}
+
+
+
+	public boolean add(Roles e) {
+		return roles.add(e);
 	}
 
 

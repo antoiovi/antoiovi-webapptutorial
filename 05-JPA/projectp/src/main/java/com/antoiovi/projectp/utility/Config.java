@@ -4,8 +4,7 @@ import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 
 import com.antoiovi.projectp.dao.UserDao;
-import com.antoiovi.projectp.model.Groups;
-import com.antoiovi.projectp.model.Roles;
+ import com.antoiovi.projectp.model.Roles;
 import com.antoiovi.projectp.model.User;
 
 import javax.annotation.PostConstruct;
@@ -25,14 +24,13 @@ public class Config {
         // Do stuff during webapp's startup.
     	User u=new User("antoiovi","antonello","iovino","antoiovi@antoiovi.com","ciaobello");
     	try {
-    	Groups g=new Groups("admin");	
-    	userDao.createGroup(g);
-    	
+    	Roles g=new Roles("admin");	
+    	userDao.createRole(g);
+    	u.add(g);
     	userDao.create(u);
     	
-    	Roles r=new Roles(u,g);
-    	userDao.createRole(r);
-    	}catch(Exception e) {
+    	 
+     	}catch(Exception e) {
     		System.out.println("Errore creazione utente");
     	}
     }
